@@ -11,24 +11,41 @@ alphabet = alphabet.split('')
 
 def caesar_cipher(string, shift)
   alphabet = "abcdefghijklmnopqrstuvwxyz"
+  alpa_upcase = alphabet.upcase.split('')
   alphabet = alphabet.split('')
+  
   array = string.split('')
   shifted_array = []
 
   array.each do |letter|
-    index_shift = alphabet.find_index(letter) + shift
-
-    if index_shift > 25
-      index_shift %= 26
+    if alphabet.find_index(letter) ==  nil
+      if alpa_upcase.find_index(letter) == nil
+      shifted_letter = letter
+      else
+        index_shift = alpa_upcase.find_index(letter) + shift
+        if index_shift > 25
+          index_shift %= 26
+        end
+        shifted_letter = alpa_upcase[index_shift]
+      end
+    else
+      index_shift = alphabet.find_index(letter) + shift
+      if index_shift > 25
+        index_shift %= 26
+      end
+      shifted_letter = alphabet[index_shift]
     end
-    shifted_letter = alphabet[index_shift]
+   
     shifted_array.push(shifted_letter)
     
+    
   end
-  puts shifted_array
+  puts shifted_array.join('')
 end
   
 caesar_cipher("z", 1)
+caesar_cipher("Z", 1)
+caesar_cipher("Hi Bob!", 20)
 
 
 
@@ -38,6 +55,5 @@ caesar_cipher("z", 1)
 
 
 
-
-#caesar_cipher("What a string!", 5)
-#puts "Expected output: \"Bmfy f xywnsl!\""
+caesar_cipher("What a string!", 5)
+puts "Expected output: \"Bmfy f xywnsl!\""
