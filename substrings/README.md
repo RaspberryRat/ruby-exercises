@@ -1,0 +1,1 @@
+Create a dictionary of words and then a method that takes a string input and compares against dictionary. The method will return each word found in the dictionary as a hash.
