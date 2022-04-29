@@ -14,7 +14,9 @@ def substrings(string, dictionary)
   else 
     str_array.delete(" ")
   end
-  p str_array
+  i = 0
+  while i < str_array.length
+    
 end
 
 substrings("Hello", dictionary)
