@@ -1,3 +1,4 @@
+
 # method accept two arguments, first argument is a string, second argument is the dictionary
 #split string into array
 # compare first index position against dictionary, if match found, add to hash, increase hash +1
@@ -8,22 +9,36 @@
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
 def substrings(string, dictionary)
-  str_array = string.split('')
+  
+  str_array = string.downcase.split('')
   if str_array.delete(' ') == nil
     str_array
   else 
     str_array.delete(" ")
   end
   i = 0
+  j = 0
+  z = 1
   word_list = Hash.new(0)
-  while i < str_array.length
-    word = str_array[0..i].join('')
+  while j < str_array.length
+    #puts "Loop #{z}"
+    z +=1
+    #puts "str_array length = #{str_array.length}"
+    #puts "j = #{j} i = #{i}"
+    word = str_array[j..i].join('')
     i += 1
+    #puts "j = #{j} i = #{i}"
+    if i == str_array.length
+      i = 0
+      j += 1
+    end
     if dictionary.find {|w| w == word} == nil
       next
     else
       word_list[word] += 1
-      end
+    end
+    #puts "j = #{j} i = #{i}"
+    
     end
     puts word_list
   end
@@ -31,4 +46,5 @@ def substrings(string, dictionary)
 
 
 
-substrings("go", dictionary)
+substrings("below", dictionary)
+substrings("Howdy partner, sit down! How's it going?", dictionary)
