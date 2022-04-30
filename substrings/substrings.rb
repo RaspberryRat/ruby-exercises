@@ -15,9 +15,21 @@ def substrings(string, dictionary)
     str_array.delete(" ")
   end
   i = 0
+  puts str_array.length
+  word_list = Hash.new(0)
   while i < str_array.length
-    
-end
+    word = str_array[0..i].join('')
+    i += 1
+    if dictionary.find {|w| w == word} == nil
+      next
+    else
+      word_list[word] += 1
+      end
+    end
+    puts word_list
+  end
 
-substrings("Hello", dictionary)
-substrings("spa a a a ", dictionary )
+
+
+
+substrings("below", dictionary)
