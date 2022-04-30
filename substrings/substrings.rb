@@ -18,7 +18,7 @@ def substrings(string, dictionary)
   end
   i = 0
   j = 0
-  z = 1
+ 
   word_list = Hash.new(0)
   while j < str_array.length
     #puts "Loop #{z}"
