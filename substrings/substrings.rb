@@ -15,7 +15,6 @@ def substrings(string, dictionary)
     str_array.delete(" ")
   end
   i = 0
-  puts str_array.length
   word_list = Hash.new(0)
   while i < str_array.length
     word = str_array[0..i].join('')
@@ -32,4 +31,4 @@ def substrings(string, dictionary)
 
 
 
-substrings("below", dictionary)
+substrings("go", dictionary)
