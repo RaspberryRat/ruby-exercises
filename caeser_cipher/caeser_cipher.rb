@@ -1,14 +1,3 @@
-#require "pry-byebug"
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-alphabet = alphabet.split('')
-#alphabet_upcase = alphabet.upcase
-
-
-#take in string,
-#split into an array
-#take letter - compare to alphabet string + the shift key and return new letter to new array
-
-
 def caesar_cipher(string, shift)
   alphabet = "abcdefghijklmnopqrstuvwxyz"
   alpa_upcase = alphabet.upcase.split('')
@@ -46,6 +35,7 @@ end
 caesar_cipher("z", 1)
 caesar_cipher("Z", 1)
 caesar_cipher("Hi Bob!", 20)
+caesar_cipher("Hi Bob!", -20)
 
 
 
