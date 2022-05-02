@@ -1,4 +1,3 @@
-#require "pry-byebug"
 def bubble_sort(num_array)
 i = 0
 j = 1
