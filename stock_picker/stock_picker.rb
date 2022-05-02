@@ -26,8 +26,8 @@ def stock_picker(prices)
       price_difference = price_difference_looped
     i += 1
   end
-    puts " The best day to buy is Day #{price_index[0]} at $#{prices[price_index[0]]}.\n The best day to sell is Day "\
-     "#{price_index[1]} at $#{prices[price_index[1]]}.\n For a total profit of $#{price_difference_looped}.\n\n"
+    puts "\nThe best day to buy is Day #{price_index[0]} at $#{prices[price_index[0]]}.\nThe best day to sell is Day "\
+     "#{price_index[1]} at $#{prices[price_index[1]]}.\nFor a total profit of $#{price_difference_looped}.\n\n"
 end
 
 stock_picker([17,3,6,9,15,8,6,1,10])
