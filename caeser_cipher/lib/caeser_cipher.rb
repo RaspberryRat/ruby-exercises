@@ -1,49 +1,22 @@
+
 def caesar_cipher(string, shift)
-  alphabet = "abcdefghijklmnopqrstuvwxyz"
-  alpa_upcase = alphabet.upcase.split('')
-  alphabet = alphabet.split('')
-  
-  array = string.split('')
-  shifted_array = []
-
-  array.each do |letter|
-    if alphabet.find_index(letter) ==  nil
-      if alpa_upcase.find_index(letter) == nil
-      shifted_letter = letter
-      else
-        index_shift = alpa_upcase.find_index(letter) + shift
-        if index_shift > 25
-          index_shift %= 26
-        end
-        shifted_letter = alpa_upcase[index_shift]
-      end
+  shifted_string = ""
+  string.each_char do |char|
+    ordinal_char = char.ord
+    # this is lower value for each uppercase or lowercase
+    upper_or_lower = ordinal_char < 91 ? 65 : 97
+    if (ordinal_char.between?(65, 90) || ordinal_char.between?(97, 122))
+      shifted_letter =  (((ordinal_char - upper_or_lower + shift) % 26) + upper_or_lower).chr
+      shifted_string += shifted_letter
     else
-      index_shift = alphabet.find_index(letter) + shift
-      if index_shift > 25
-        index_shift %= 26
-      end
-      shifted_letter = alphabet[index_shift]
+       shifted_string += char
     end
-   
-    shifted_array.push(shifted_letter)
-    
-    
   end
-  puts shifted_array.join('')
+  puts shifted_string
+  shifted_string
 end
-  
-caesar_cipher("z", 1)
-caesar_cipher("Z", 1)
-caesar_cipher("Hi Bob!", 20)
-caesar_cipher("Hi Bob!", -20)
 
+caesar_cipher("hello!!!!", 3)
 
+caesar_cipher("Why don't you come have a seat over here? Oh No Chris Hansen!!!!!!!", 74)
 
-
-
-
-
-
-
-caesar_cipher("What a string!", 5)
-puts "Expected output: \"Bmfy f xywnsl!\""

@@ -1,4 +1,4 @@
-require './lib/caeser_cipher_2'
+require './lib/caeser_cipher'
 describe "#caeser_cipher" do
   it "returns cipher code from message shifted 1 letter" do
     expect(caesar_cipher("aaa", 1)).to eql ("bbb")
