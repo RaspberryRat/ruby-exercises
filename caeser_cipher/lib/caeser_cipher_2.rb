@@ -1,10 +1,4 @@
-#refactoring of code based on review of others
-#require "pry-byebug"
 
-#each character find ordinal value, 
-#determine if value is uppercase or lower case
-# subtract ordinal value from uppercase or lowercase value, add shift, add back upper/lower value
-#save message to new stringr
 def caesar_cipher(string, shift)
   shifted_string = ""
   string.each_char do |char|
@@ -19,6 +13,7 @@ def caesar_cipher(string, shift)
     end
   end
   puts shifted_string
+  shifted_string
 end
 
 caesar_cipher("hello!!!!", 3)
